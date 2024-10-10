@@ -1,0 +1,240 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Basic styles */
+body {
+    font-family: 'Roboto', sans-serif; /* Main body font */
+    line-height: 1.6;
+    background: url('../image/photo7.jpg') no-repeat center center fixed; /* Background image */
+    background-size: cover; /* Cover the entire background */
+    color: DarkSlateGray; /* Default dark text color */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full height for the body */
+    overflow-y: scroll; /* Custom scrollbar */
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: SteelBlue;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: LightGray;
+}
+
+/* Header styles */
+header {
+    background: linear-gradient(90deg, Blue, Gold); /* Gradient background */
+    color: Black; /* Dark text */
+    padding: 5px 0; /* Reduced padding for closer spacing */
+    text-align: center;
+    border: 2px solid DodgerBlue; /* Border color */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+/* Keyframes for spinning */
+@keyframes spin {
+    from {
+        transform: rotate(0deg); /* Start at 0 degrees */
+    }
+    to {
+        transform: rotate(360deg); /* Rotate to 360 degrees */
+    }
+}
+
+/* Logo styling with spinning animation */
+#logo {
+    max-width: 350px; /* Adjust based on your logo size */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0; /* Remove margin to bring it closer to the header */
+    animation: spin 2s linear infinite; /* Spin animation */
+    transition: transform 0.5s; /* Smooth transition for upright position */
+}
+
+/* Stop spinning and return to upright position on hover */
+#logo:hover {
+    animation: none; /* Stop spinning */
+    transform: rotate(0deg); /* Ensure it is upright */
+}
+
+/* Heading styles */
+h1, h2 {
+    font-family: 'Times New Roman', Times, serif; /* Change font to Times New Roman */
+    color: DodgerBlue; /* Trendy blue color */
+    text-shadow: 
+        1px 1px 0px Gold, /* Yellow outline */
+        -1px -1px 0px Gold, 
+        1px -1px 0px Gold, 
+        -1px 1px 0px Gold, 
+        0px 0px 5px White; /* Inner white glow */
+}
+
+h1 {
+    font-size: 4rem; /* Set font size for h1 */
+    margin: 5px 0 0; /* Set top margin to 5px for slight spacing */
+}
+
+h2 {
+    font-size: 4rem; /* Set font size for h2 */
+    font-weight: bold; /* Bold text */
+}
+
+/* Navigation styles */
+nav ul {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove default padding */
+}
+
+nav li {
+    display: inline; /* Display buttons in a row */
+    margin: 0 15px; /* Spacing between buttons */
+}
+
+nav li a {
+    text-decoration: none; /* Remove underline */
+    color: White; /* Default link color */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+nav li a:hover {
+    color: Gold; /* Highlight color on hover */
+}
+
+/* Button styles */
+.button {
+    background: linear-gradient(90deg, Blue, Gold); /* Button background */
+    color: White; /* Button text color */
+    padding: 12px 24px; /* Increased padding */
+    border: none; /* Remove default border */
+    border-radius: 5px;
+    text-decoration: none;
+    transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
+
+.button:hover {
+    background: LightGreen; /* Change button color on hover */
+    color: Black; /* Change text color on hover */
+    transform: scale(1.05); /* Slightly increase size */
+}
+
+/* Active button styles */
+.button.active {
+    background: Gold; /* Highlighted background color for active button */
+    color: Black; /* Change text color for better contrast */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Slightly darker shadow for emphasis */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Content Box Styles */
+.content-box {
+    background: linear-gradient(90deg, Blue, Gold); /* Gradient background */
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto; /* Center align boxes */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid DodgerBlue; /* Dark blue border */
+    color: Black; /* Dark text for contrast */
+    opacity: 0; /* Start invisible */
+    transform: translateY(20px); /* Slide in from below */
+    animation: fadeInUp 0.5s forwards; /* Apply animation */
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Video Box Styles */
+.video-box {
+    background: linear-gradient(90deg, Blue, Gold);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto; /* Center align boxes */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    color: Black; /* Dark text for readability */
+}
+
+/* Contact Box Styles */
+.contact-box {
+    background: rgba(0, 0, 0, 0.5) url('../image/photo4.jpg') no-repeat center; /* Dark overlay */
+    background-size: cover; /* Cover background */
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto; /* Center align boxes */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    color: Gold; /* Change text color to gold for better contrast */
+    height: 400px; /* Set a specific height for better visibility */
+    font-weight: bold; /* Make text bold */
+    text-shadow: 1px 1px 0 DarkSlateGray, /* Outline effect */
+                 -1px -1px 0 DarkSlateGray,
+                 1px -1px 0 DarkSlateGray,
+                 -1px 1px 0 DarkSlateGray; 
+}
+
+/* New styles for content with image */
+.content-inner {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center vertically */
+}
+
+.content-inner p {
+    flex: 1; /* Allow the paragraph to take up available space */
+    margin-right: 20px; /* Add space between text and image */
+    font-size: 1.5rem; /* Increase font size for the paragraph */
+    color: White; /* Light color for better contrast */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add shadow for visibility */
+}
+
+.content-image {
+    max-width: 350px; /* Adjust the width of the image */
+    height: auto; /* Maintain aspect ratio */
+    border: 2px solid DodgerBlue; /* Optional: Add border to the image */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    transition: transform 0.3s ease; /* Smooth transition for image hover */
+}
+
+.content-image:hover {
+    transform: scale(1.1); /* Zoom in on hover */
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: DarkSlateGray; /* Dark background */
+    color: White; /* White text for better visibility */
+    margin-top: auto; /* Push the footer to the bottom */
+    font-size: 1rem; /* Slightly larger footer text */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem; /* Smaller h1 on mobile */
+    }
+
+    h2 {
+        font-size: 2rem; /* Smaller h2 on mobile */
+    }
+
+    .content-inner p {
+        font-size: 1.2rem; /* Smaller paragraph text on mobile */
+    }
+
+    .button {
+        padding: 10px 20px; /* Smaller button padding on mobile */
+    }
+
+    .content-inner {
+        flex-direction: column; /* Stack text and image on smaller screens */
+    }
+}

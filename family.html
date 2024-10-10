@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Family</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Link to your CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: url('image/photo7.jpg') no-repeat center center fixed; 
+            background-size: cover; 
+            color: white; 
+        }
+
+        header img {
+            max-width: 200px; /* Set the maximum width of the logo */
+            margin-bottom: 10px; /* Space below the logo */
+        }
+
+        header h1 {
+            font-size: 3rem; /* Adjust the size of the main header */
+        }
+
+        header h2 {
+            font-size: 2rem; /* Adjust the size of sub-headers */
+        }
+
+        header h3 {
+            font-size: 1.5rem; /* Adjust the size for smaller headings */
+        }
+
+        .family-tree {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+            background: rgba(0, 0, 0, 0.5); 
+            padding: 20px;
+            border-radius: 10px; 
+        }
+
+        .parents, .siblings {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .parent, .sibling {
+            margin: 0 20px;
+            width: 150px;
+            cursor: pointer; 
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px; 
+        }
+
+        h1, h2, h3 {
+            color: gold; 
+        }
+
+        #modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0, 0, 0, 0.8); 
+            text-align: center; 
+        }
+
+        #expandedImg {
+            max-width: 90%; 
+            max-height: 80vh; 
+            margin: auto; 
+            display: block; 
+            padding-top: 5%; 
+        }
+
+        nav ul {
+            list-style-type: none; 
+            padding: 0; 
+        }
+
+        nav ul li {
+            display: inline; 
+            margin: 0 10px; 
+        }
+
+        a {
+            color: gold; 
+            text-decoration: none; 
+            font-weight: bold; 
+        }
+
+        a:hover {
+            text-decoration: underline; 
+        }
+
+        .button.active {
+            background-color: gold; 
+            color: black; 
+            border: 2px solid darkgoldenrod; 
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem; 
+            }
+
+            header h2 {
+                font-size: 1.5rem; 
+            }
+
+            header h3 {
+                font-size: 1.2rem; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img id="logo" src="image/final logo.png" alt="Logo"> <!-- Logo added here -->
+        <h1>My Family</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="button">Home</a></li>
+                <li><a href="experience.html" class="button">Skills</a></li>
+                <li><a href="contact.html" class="button">Contact</a></li>
+                <li><a href="680-MVMT.html" class="button">680 Movement</a></li>
+                <li><a href="family.html" class="button active">Family</a></li> <!-- Active button -->
+            </ul>
+        </nav>
+    </header>
+
+    <div class="family-tree">
+        <div class="parents">
+            <div class="parent" onclick="openModal('dad')">
+                <h2>Dad</h2>
+                <img src="image/dad.jpg" alt="Dad's Photo">
+            </div>
+            <div class="parent" onclick="openModal('mom')">
+                <h2>Mom</h2>
+                <img src="image/MOM2.jpg" alt="Mom's Photo">
+            </div>
+        </div>
+
+        <div class="siblings">
+            <div class="sibling" onclick="openModal('sister1')">
+                <h3>Drew</h3>
+                <img src="image/Drew.jpg" alt="Sister 1's Photo">
+            </div>
+            <div class="sibling" onclick="openModal('sister2')">
+                <h3>Missy</h3>
+                <img src="image/MISSY.jpg" alt="Sister 2's Photo">
+            </div>
+            <div class="sibling" onclick="openModal('sister3')">
+                <h3>Maia</h3>
+                <img src="image/Maia.jpg" alt="Sister 3's Photo">
+            </div>
+        </div>
+    </div>
+
+    <div id="modal" onclick="closeModal()">
+        <img id="expandedImg" src="" alt="Expanded image">
+    </div>
+
+    <script>
+        function openModal(imageId) {
+            const modal = document.getElementById('modal');
+            const expandedImg = document.getElementById('expandedImg');
+            expandedImg.src = `image/${imageId}.jpg`;
+            modal.style.display = "block"; 
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = "none"; 
+        }
+    </script>
+
+</body>
+</html>
